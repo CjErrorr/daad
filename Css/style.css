@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #B5D9A9;
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-height: 80vh; /* Limits the height of the container */
+  overflow-y: auto; /* Enables scrolling within the container if content exceeds max-height */
+}
+
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container .form {
+  margin-top: 30px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: #46a839;
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #707070;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #88ca72;
+  border-radius: 10px;
+}
+
+.form button:hover {
+  background: #46a839;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #46a839; 
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notification.show {
+  display: block;
+  opacity: 1;
+}
+
+.notification .message {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Add styles for the checkbox */
+.input-box .gender {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.gender input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #46a839; /* Green accent color */
+}
+
+.gender label {
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  user-select: none; /* Prevents text selection when clicking */
+}
+
+.gender input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(70, 168, 57, 0.5); /* Focus shadow */
+}
+
+.form :where(.gender-option) {
+  column-gap: 20px;
+}
+
+.form .gender input[type="checkbox"]:checked + label {
+  font-weight: 500;
+  color: #46a839; /* Change label color when checkbox is checked */
+}
+
+input[type="radio"] {
+  transform: scale(0.8); /* Makes the radio button smaller */
+  margin-right: 5px; /* Adds space between the radio button and label */
+}
+
+/* Styling for the password container */
+.password-container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for labels */
+.password-container label {
+  font-size: 14px;
+  font-weight: small;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style for input fields */
+.password-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Focus styles for input fields */
+.password-container input:focus {
+  border-color: #46a839;
+  outline: none;
+}
+
+
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
